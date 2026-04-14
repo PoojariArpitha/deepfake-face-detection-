@@ -14,5 +14,5 @@ if video is not None:
         result = "Fake"
         confidence = 90
 
-        st.write("Prediction:", result)
-        st.write("Accuracy Level:", str(confidence) + "%")
+        st.write("Result:", result)
+        st.write("Confidence:", str(confidence) + "%")

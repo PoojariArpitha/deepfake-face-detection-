@@ -1,8 +1,10 @@
 import streamlit as st
 
-st.title("Deepfake Face Detection")
+st.set_page_config(page_title="Deepfake Detection", layout="centered")
 
-video = st.file_uploader("Upload a video", type=["mp4", "avi", "mov"])
+st.title("AI Based Face Swap Detection")
+
+video = st.file_uploader("Upload Video", type=["mp4", "avi", "mov"])
 
 if video is not None:
     st.video(video)
@@ -11,5 +13,5 @@ if video is not None:
         result = "Fake"
         confidence = 90
 
-        st.write(f"Result: {result}")
-        st.write(f"Confidence: {confidence}%")
+        st.write("Result:", result)
+        st.write("Confidence:", str(confidence) + "%")

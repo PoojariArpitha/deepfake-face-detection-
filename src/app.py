@@ -1,5 +1,5 @@
-
 import streamlit as st
+from main import detect_deepfake  
 
 st.set_page_config(page_title="Deepfake Detection", layout="centered")
 
@@ -11,8 +11,13 @@ if video is not None:
     st.video(video)
 
     if st.button("Check video"):
-        result = "Fake"
-        confidence = 90
 
-        st.write("Result:", result)
-        st.write("Confidence:", str(confidence) + "%")
+        video_bytes = video.read()
+
+        with open("temp.mp4", "wb") as f:
+            f.write(video_bytes)
+
+        result, confidence = detect_deepfake("temp.mp4")
+
+        st.success(f"Result: {result}")
+        st.info(f"Confidence: {confidence}%")

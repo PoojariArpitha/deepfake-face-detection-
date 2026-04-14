@@ -9,7 +9,7 @@ video = st.file_uploader("Upload Video", type=["mp4", "avi", "mov"])
 if video is not None:
     st.video(video)
 
-    if st.button("check video"):
+    if st.button("Check video"):
         result = "Fake"
         confidence = 90
 

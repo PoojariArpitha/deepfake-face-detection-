@@ -9,9 +9,9 @@ video = st.file_uploader("Upload Video", type=["mp4", "avi", "mov"])
 if video is not None:
     st.video(video)
 
-    if st.button("Analyze"):
+    if st.button("check video"):
         result = "Fake"
         confidence = 90
 
-        st.write("Result:", result)
-        st.write("Confidence:", str(confidence) + "%")
+        st.write("Prediction:", result)
+        st.write("Accuracy Level:", str(confidence) + "%")
